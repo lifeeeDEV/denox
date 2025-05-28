@@ -61,14 +61,14 @@ export const FloatingNav = ({
           // change rounded-full to rounded-lg
           // remove dark:border-white/[0.2] dark:bg-black bg-white border-transparent
           // change pr-2 pl-8 py-2 to px-10 py-5
-          "flex max-w-fit md:min-w-[70vw] lg:min-w-fit fixed z-[5000] top-10 inset-x-0 mx-auto px-10 py-5 rounded-lg border border-black/.1 shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] items-center justify-center space-x-4",
+          "flex max-w-fit md:min-w-[70vw] lg:min-w-fit fixed z-[5000] top-10 inset-x-0 mx-auto px-10 py-5 rounded-xl border border-neutral-700 items-center justify-center space-x-4 bg-surface shadow-xl shadow-black/25",
           className
         )}
         style={{
           backdropFilter: "blur(16px) saturate(180%)",
-          backgroundColor: "rgba(17, 25, 40, 0.75)",
-          borderRadius: "12px",
-          border: "1px solid rgba(255, 255, 255, 0.125)",
+          // backgroundColor: "rgba(17, 25, 40, 0.75)", // Replaced with bg-surface
+          // borderRadius: "12px", // Removed, using rounded-xl from Tailwind
+          // border: "1px solid rgba(255, 255, 255, 0.125)", // Replaced with border-neutral-700
         }}
       >
         {navItems.map((navItem: any, idx: number) => (
@@ -78,7 +78,7 @@ export const FloatingNav = ({
             smooth={true}
             duration={500}
             className={cn(
-              "relative dark:text-white items-center flex space-x-1 text-white dark:hover:text-leat-400 hover:text-teal-400 !cursor-pointer"
+              "relative items-center flex space-x-1 text-foreground hover:text-accent !cursor-pointer"
             )}
           >
             <span className="block sm:hidden">{navItem.icon}</span>
@@ -88,9 +88,9 @@ export const FloatingNav = ({
           </ScrollLink>
         ))}
         <ScrollLink to="contact" smooth={true} duration={500}>
-          <button className="border text-sm font-medium relative border-neutral-200 dark:border-white/[0.2] text-white dark:text-white px-4 py-2 rounded-full">
+          <button className="border text-sm font-medium relative border-neutral-700 text-foreground px-4 py-2 rounded-full">
             <span>Contact</span>
-            <span className="absolute inset-x-0 w-1/2 mx-auto -bottom-px bg-gradient-to-r from-transparent via-blue-500 to-transparent h-px" />
+            <span className="absolute inset-x-0 w-1/2 mx-auto -bottom-px bg-gradient-to-r from-transparent via-primary to-transparent h-px" />
           </button>
         </ScrollLink>
       </motion.div>

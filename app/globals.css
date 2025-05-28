@@ -27,6 +27,12 @@
 
 
 @layer base {
+  html {
+    @apply bg-background text-foreground;
+  }
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
   button {
     @apply active:outline-none;
   }
@@ -34,7 +40,7 @@
 
 @layer utilities {
   .heading {
-    @apply font-bold text-4xl md:text-5xl text-center;
+    @apply font-heading font-bold text-4xl md:text-5xl text-center text-primary;
   }
 }
 

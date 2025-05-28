@@ -24,6 +24,19 @@ const config: Config = {
   darkMode: "class",
   theme: {
     extend: {
+      colors: {
+        primary: colors.teal[600],
+        secondary: colors.slate[700],
+        accent: colors.teal[400],
+        background: colors.neutral[900],
+        surface: colors.neutral[800],
+        foreground: colors.neutral[100],
+        foregroundMuted: colors.neutral[400],
+      },
+      fontFamily: {
+        sans: ['var(--font-open-sans)', ...defaultTheme.fontFamily.sans],
+        heading: ['var(--font-poppins)', ...defaultTheme.fontFamily.sans],
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":

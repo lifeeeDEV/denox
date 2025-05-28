@@ -1,10 +1,24 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import { Inter, Poppins, Open_Sans } from 'next/font/google';
 import './globals.css';
 import { Background } from './components/Background';
 import SessionWrapper from './SessionWrapper';
 
 const inter = Inter({ subsets: ['latin'] });
+
+const poppins = Poppins({
+  subsets: ['latin'],
+  display: 'swap', // Recommended for performance
+  weight: ['600', '700'], // Semi-bold and Bold for headings
+  variable: '--font-poppins',
+});
+
+const openSans = Open_Sans({
+  subsets: ['latin'],
+  display: 'swap', // Recommended for performance
+  weight: ['400', '600'], // Regular and Semi-bold for body
+  variable: '--font-open-sans',
+});
 
 export const metadata: Metadata = {
   title: 'Deniz-Kaya.de - Mediengestaltung in Bild und Ton',
@@ -42,7 +56,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${poppins.variable} ${openSans.variable} ${inter.className}`}>
       <head>
         <meta name="description" content="Erkunden Sie die Welt der Mediengestaltung in Bild und Ton mit Deniz Kaya und seinen Projekten." />
         <meta property="og:title" content="Deniz-Kaya.de - Mediengestaltung in Bild und Ton" />
@@ -55,7 +69,7 @@ export default function RootLayout({
         <meta name="twitter:image" content="favicon.ico" />
         <title>Deniz-Kaya.de - Mediengestaltung in Bild und Ton</title>
       </head>
-      <body className={`${inter.className} min-h-screen relative`}>
+      <body className={`min-h-screen relative`}> {/* Inter is already on html tag */}
         <Background />
         <SessionWrapper>
           <div className="relative z-10 min-h-screen flex flex-col">

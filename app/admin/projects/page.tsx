@@ -54,20 +54,20 @@ export default function Projects() {
   }
 
   return (
-    <div className="container mx-auto p-4">
-      <h1 className="text-3xl font-bold text-center text-white mb-6">Projects</h1>
+    <div className="container mx-auto p-4 bg-background">
+      <h1 className="text-3xl font-bold text-center text-foreground mb-6">Projects</h1>
       <ul className="space-y-4">
         {projects.map((project) => (
-          <li key={project._id} className="bg-white p-6 rounded-lg shadow-md">
-            <h3 className="text-xl font-bold">{project.title}</h3>
-            <p className="text-white">{project.description}</p>
+          <li key={project._id} className="bg-surface p-6 rounded-lg shadow-md">
+            <h3 className="text-xl font-bold text-primary">{project.title}</h3>
+            <p className="text-foregroundMuted">{project.description}</p>
             {project.image && <img src={project.image} alt={project.title} className="mt-2 rounded-md w-full max-w-xs mx-auto" />}
             {project.youtube_link && 
               <a 
                 href={project.youtube_link} 
                 target="_blank" 
                 rel="noopener noreferrer" 
-                className="text-indigo-600 hover:text-indigo-800 mt-2 block"
+                className="text-primary hover:text-accent mt-2 block"
               >
                 Watch on YouTube
               </a>
